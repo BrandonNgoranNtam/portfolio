@@ -1,28 +1,85 @@
-import { workExperience } from '@/data'
-import React from 'react'
-import { Button } from './ui/MovingBorders'
+"use client";
+import React from "react";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import { motion } from "framer-motion";
+
+import "react-vertical-timeline-component/style.min.css";
+
+import { experiences } from "@/data";
+import { textVariant } from "../utils/motion";
+import { Tilt } from "react-tilt"
+
+
+const ExperienceCard = ({ experience }: any) => {
+  return (
+    <VerticalTimelineElement
+      visible={true}
+
+      contentStyle={{
+        background: "#1d1836",
+        color: "#fff",
+      }}
+      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      date={experience.date}
+      iconStyle={{ background: experience.iconBg }}
+      icon={
+        <div className='flex justify-center items-center w-full h-full'>
+          <img
+            src={experience.icon}
+            alt={experience.company_name}
+            className='w-[60%] h-[60%] object-contain'
+          />
+        </div>
+      }
+    >
+      <div>
+        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <p
+          className='text-white-100 text-[16px] font-semibold'
+          style={{ margin: 0 }}
+        >
+          {experience.company_name}
+        </p>
+      </div>
+
+      <ul className='mt-5 list-disc ml-5 space-y-2'>
+        {experience.points.map((point: string, index: number) => (
+          <li
+            key={`experience-point-${index}`}
+            className='text-white-100 text-[14px] pl-1 tracking-wider'
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+    </VerticalTimelineElement>
+  );
+};
 
 const Experience = () => {
-    return (
-        <div className='py-20' id='testimonials'>
-            <h1 className='heading'>
-                My <span className='text-purple'>work experience</span>
-            </h1>
-            <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10'>
-                {workExperience.map((card) => (
-                    <Button key={card.id} duration={Math.floor(Math.random() * 10000 + 10000)} borderRadius='1.75rem' className='flex-1 text-white border-neutral-200 dark:border-slate-800'>
-                        <div className='flex flex-col lg:flex-row lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2'>
-                            <img src={card.thumbnail} alt={card.thumbnail} className='lg:w-32 md:w-20'/>
-                            <div className='lg:ms-5'>
-                                <h1 className='text-start text-xl md:text-2xl font-bold'>{card.title}</h1>
-                                <p className='text-start text-white-100 mt-3 font-semibold'>{card.desc}</p>
-                            </div>
-                        </div>
-                    </Button>
-                ))}
-            </div>
-        </div>
-    )
-}
+  return (
+    <>
+      <motion.div className='py-20' id='experience'>
+        <h1 className='heading'>
+          My <span className='text-purple'>work experience</span>
+        </h1>
+      </motion.div>
 
-export default Experience
+      <div className='mt-20 flex flex-col'>
+        <VerticalTimeline>
+          {experiences.map((experience, index) => (
+            <ExperienceCard
+              key={`experience-${index}`}
+              experience={experience}
+            />
+          ))}
+        </VerticalTimeline>
+      </div>
+    </>
+  );
+};
+
+export default Experience;
