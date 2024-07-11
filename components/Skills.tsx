@@ -1,5 +1,5 @@
 "use client"
-import { skills } from '@/data'
+import { skills } from '@/public/tech'
 import React from 'react'
 import { Button } from './ui/MovingBorders'
 import Tech from './Tech'

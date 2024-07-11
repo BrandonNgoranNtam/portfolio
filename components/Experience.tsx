@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
 
-import { experiences } from "@/data";
+import { experiences } from "@/public/tech";
 import { textVariant } from "../utils/motion";
 import { Tilt } from "react-tilt"
 
@@ -30,7 +30,7 @@ const ExperienceCard = ({ experience }: any) => {
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className='w-[95%] h-[95%] object-contain'
           />
         </div>
       }
