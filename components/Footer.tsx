@@ -1,7 +1,7 @@
 import React from 'react'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
-import { socialMedia } from '@/public/tech'
+import { socialMedia } from '@/data'
 import { div } from 'three/examples/jsm/nodes/Nodes.js'
 
 const Footer = () => {

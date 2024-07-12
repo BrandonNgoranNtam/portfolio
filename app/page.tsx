@@ -7,7 +7,7 @@ import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
 import Testimonials from "@/components/Testimonials";
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import { navItems } from "@/public/tech";
+import { navItems } from "@/data";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
 
@@ -21,8 +21,8 @@ export default function Home() {
         <Skills />
         <Experience />
         <RecentProjects />
-        <Testimonials />
-        <Approach />
+        {/* <Testimonials /> */}
+        {/*<Approach />*/}
         <Footer />
       </div>
     </main>

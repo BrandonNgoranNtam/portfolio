@@ -1,6 +1,6 @@
 import React from "react";
 
-import { technologies } from "@/public/tech";
+import { technologies } from "@/data";
 import BallCanvas from "./ui/BallCanvas";
 
 const Tech = () => {
