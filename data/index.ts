@@ -178,10 +178,6 @@ export const technologies = [
     icon: "/tech/postgresql-icon.svg",
   },
   {
-    name: "Tailwind CSS",
-    icon: "/tech/tailwind.png",
-  },
-  {
     name: "MongoDB",
     icon: "/tech/mongodb.png",
   },
