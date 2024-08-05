@@ -24,7 +24,7 @@ const Hero = () => {
                     </h2>
                     <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='One Line of Code at a Time'/>
                     <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-                        Hi, I&apos;m Brandon. I&apos;m a full-stack developer based in Australia.
+                        Hi, I&apos;m Brandon. I&apos;m a full-stack developer ready to become your newest team member.
                     </p>
                     <a href="#about"> <MagicButton title="Show my work" icon={<FaLocationArrow/>} position="right"/></a>
                    
